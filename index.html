@@ -5,17 +5,30 @@
     <meta name="viewport" content="width=device-width">
     <title>API Capstone</title>
     <link href="main.css" rel="stylesheet" type="text/css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
   </head>
   <body>
-  	<h1>API Capstone</h1>
-  	<main role="main" id="main">
-  		<form role="form" class="search" type="text">
+    <header role="banner">
+  	 <h1>Spotify Weather Playlist Generator</h1>
+    </header>
+  	<main role="main" class="main-container">
+  		<form role="form" class="search" type="search">
   			<fieldset>
-  			<input role="searchbox" type="text"
-  			class="zip-search" placeholder="Please enter Zip Code....">
+  			<input role="searchbox" type="search"
+  			id="zip-search" placeholder="Enter 5 Digit Zip Code">
   			<button role="button" type="submit" aria-label="submit" id="submit">Submit</button>
   			</fieldset>
   		</form>
+    </main>
+
+    <div class="results-container">
+      <div class="results">
+        <iframe src="https://open.spotify.com/embed/album/6pkQfQc58FFRwpdqOxJizg" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+
+    </div>
+  </div>
 
     <script src="app.js"></script>
   </body>
