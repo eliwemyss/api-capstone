@@ -1,0 +1,90 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+ /* background-image: url('img/music-player.jpg');*/
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+}
+
+.container {
+	max-width: 100%;
+	background-color: black;
+  vertical-align: middle;
+	height: 100px;
+  opacity: .8;
+
+}
+
+header h1 {
+  color: white;
+  vertical-align: middle;
+  text-align: center;
+  margin-top: 0;
+  padding: 30px 0 20px 0;
+
+}
+
+.main-container {
+ 	display: block; 
+ 	background-color: black;
+ 	color: white;
+ 	margin: 100px auto;
+ 	width: 33.3%;
+ 	border-radius: 10px;
+ 	text-align: center;
+  box-shadow: 11px 10px 25px 7px rgba(0,0,0,0.41);
+  opacity: .8;
+}
+
+.weather-container {
+  position: absolute;
+  text-align: center;
+  display: inline-block; 
+  background-color: black;
+  color: white;
+  width: 33.3%;
+  border-radius: 10px;
+  box-shadow: 11px 10px 25px 7px rgba(0,0,0,0.41);
+  opacity: .8;
+/*  right: -50px;
+  top: 150px;*/
+}
+
+.icon{
+  height: 150px;
+  width: 150px;
+}
+fieldset {
+	border: none;
+}
+
+legend {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+#zip-search {
+  border: 01px solid #9b9b9b;
+  padding-left: 10px;
+  width: 50%;
+  height: 40px;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+button#submit{
+  height: 40px;
+  width:50px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+
