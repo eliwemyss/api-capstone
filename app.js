@@ -1,5 +1,5 @@
 // get data from weather API from zip code entered
-var response
+var musicSearch
 
 $("#submit").click('',function(event){
     event.preventDefault();
@@ -16,38 +16,55 @@ $("#submit").click('',function(event){
                     console.log(data);
                     let weatherData = displayWeather(data);
                     $('.results').html(weatherData);
+                    let musicSearch = data.weather[0].main;
             });
-   } else{$('.results').html(`<div class="error-alert">Please enter a valid zip code</div>`)}     
+   } else{$('.error').html(`<div class="error">*Please enter a valid zip code</div>`)}     
  })
 
 function displayWeather(data) {
     return `
     <div class="weather-container">
-        <h2>Current Weather for ${data.name}</h2>
-        <h3><img class="icon" src='http://openweathermap.org/img/w/${data.weather[0].icon}.png'></h3>
-        <h3>${data.weather[0].main}</h3>
-        <h3>Current Temperature ${data.main.temp}</h3>
+        <h2 class="weather-header">Current Weather for ${data.name}</h2>
+        <p class weather-info>${data.weather[0].main}<span><img class="icon" src='http://openweathermap.org/img/w/${data.weather[0].icon}.png'></span></p>
+        <p class="weather-info">Current Temperature ${data.main.temp}</p>
     </div>
     `
 }
 
-
+http://ws.audioscrobbler.com/2.0/?method=track.search&track={musicSearch}&api_key=ef758ff691b807ea741f804fc59e8c2e&format=json
 // also want to display current weather on the side
 
 
 // use data collected from weather API as search term for last.fm playlists
 
-function getMusic(data) {
-    let MUSIC_API_KEY = 'ef758ff691b807ea741f804fc59e8c2e'
-    $.getJSON('http://ws.audioscrobbler.com/2.0/?method=track.search&track',
+function getMusic(musicSearch) {
+    $.getJSON("http://ws.audioscrobbler.com/2.0/?method=track.search",
     {
-        format: json,
-        api_key: MUSIC_API_KEY
+        track: musicSearch,
+        limit: 9,
+        api_key: 'ef758ff691b807ea741f804fc59e8c2e'
     },
-    function musicResults(data){
-        console.log(data)
-    });
-}
+    function renderMusicResults(music) {
+        console.log(music)
+    }
+    )
+}    
+
+// $.ajax({
+//     type : 'POST',
+//     url : 'http://ws.audioscrobbler.com/2.0/',
+//     data : 'method=artist.getinfo&' +
+//            'artist=After+The+Burial&' +
+//            'api_key=57ee3318536b23ee81d6b27e36997cde&' +
+//            'format=json',
+//     dataType : 'jsonp',
+//     success : function(data) {
+//         // Handle success code here
+//     },
+//     error : function(code, message){
+//         // Handle error here
+//     }
+// });
 
 // diplay search results from playlist query
 
