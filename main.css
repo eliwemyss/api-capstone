@@ -4,7 +4,7 @@
 
 body {
   font-family: sans-serif;
-  background-image: url('img/music-player.jpg');
+/*  background-image: url('img/music-player.jpg');*/
   background-repeat: no-repeat;
   background-size: cover;
   margin: 0;
@@ -46,9 +46,10 @@ header h1 {
 
 .weather-container {
   position: absolute;
-  background-color: blue;
+  background-color: #66b3ff;
   color: white;
   width: 333px;
+  padding: 10px;
   border-radius: 10px;
   box-shadow: 11px 10px 25px 7px rgba(0,0,0,0.41);
   opacity: .8;
@@ -59,7 +60,7 @@ header h1 {
 .icon{
   height: 100px;
   width: 100px;
-  display: inline;
+  text-align: center;
 }
 
 .weather-header{
@@ -92,7 +93,7 @@ legend {
 
 button#submit{
   height: 40px;
-  width:50px;
+  width: 50px;
   cursor: pointer;
 }
 
