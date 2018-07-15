@@ -7,7 +7,7 @@ $("#submit").click('',function(event){
     var zip = $("#zip-search").val();
     $('#zip-search').val('');
     if (zip != '' && zip.length === 5){
-        $.getJSON("http://api.openweathermap.org/data/2.5/weather",
+        $.getJSON("https://api.openweathermap.org/data/2.5/weather",
             {
                 zip: zip,
                 units:"imperial",
@@ -40,7 +40,7 @@ function displayWeather(data) {
 
     $.ajax({
     type : 'POST',
-    url : 'http://ws.audioscrobbler.com/2.0/',
+    url : 'https://ws.audioscrobbler.com/2.0/',
     data : 'method=track.search&' +
            'track=sunny&' +
            'api_key=ef758ff691b807ea741f804fc59e8c2e&' +
