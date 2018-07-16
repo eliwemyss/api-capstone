@@ -1,12 +1,10 @@
 // get data from weather API from zip code entered
-var musicSearch
-var track
-
-$("#submit").click('',function(event){
+$(".search").submit('',function(event){
     event.preventDefault();
     var zip = $("#zip-search").val();
     $('#zip-search').val('');
     if (zip != '' && zip.length === 5){
+        $('.error').html('')
         $.getJSON("https://api.openweathermap.org/data/2.5/weather",
             {
                 zip: zip,
@@ -17,9 +15,10 @@ $("#submit").click('',function(event){
                     console.log(data);
                     let weatherData = displayWeather(data);
                     $('.results').html(weatherData);
-                    track = data.weather[0].main;
+                     getMusicData(data.weather[0].main);
+
             });
-   } else{$('.error').html(`<div class="error" data-dismiss="error">*Please enter a valid zip code</div>`)}     
+   } else{$('.error').html(`<div class="error" data-dismiss="error">*Please enter a valid zip code</div>`)}
  })
 
 function displayWeather(data) {
@@ -36,22 +35,36 @@ function displayWeather(data) {
 
 // use data collected from weather API as search term for last.fm playlists
 
-
-
+function getMusicData(music){
     $.ajax({
-    type : 'POST',
+    type : 'GET',
     url : 'https://ws.audioscrobbler.com/2.0/',
     data : 'method=track.search&' +
-           'track=sunny&' +
+           'track=' + music + '&' +
            'api_key=ef758ff691b807ea741f804fc59e8c2e&' +
            'limit=9&' +
            'format=json',
     dataType : 'jsonp',
-    success : function(data) {
-        console.log(data)
-        $('.results').html(data)
+    success : function(music) {
+        console.log(music)
+        let musicData = displayMusic(music)
+        $('.music-results').html(musicData)
+
         }
     });
+
+}
+
+function displayMusic(music){
+   return` 
+   <div class="music-container">
+        <h2>Choose Songs</h2>
+        <div>${music.results.trackmatches.track[0].artist}</div>
+        <div>${music.results.trackmatches.track[0].name}</div>
+    </div>`
+}
+
+
 
 // diplay search results from playlist query
 
