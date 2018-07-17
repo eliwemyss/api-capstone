@@ -23,7 +23,9 @@ $(".search").submit('',function(event){
  })
 
 // function catchError(error) {
-//     if (error.cod)
+//     if (error.cod){
+//         return $('.error').html(`<div class="error">*Please enter a valid zip code</div>`)
+//     }
 // }
 
 function displayWeather(data) {
@@ -84,7 +86,6 @@ for (i = 0; i > music.results.trackmatches.length; i++);
         `
 }
 
-// <img src="${music.results.trackmatches.track[0].image[0].size}
 
 // diplay search results from playlist query
 
