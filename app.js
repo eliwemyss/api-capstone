@@ -16,10 +16,15 @@ $(".search").submit('',function(event){
                     let weatherData = displayWeather(data);
                     $('.results').html(weatherData);
                      getMusicData(data.weather[0].main);
+                     // catchError(data)
 
             });
-   } else{$('.error').html(`<div class="error" data-dismiss="error">*Please enter a valid zip code</div>`)}
+   } else{$('.error').html(`<div class="error">*Please enter a valid zip code</div>`)}
  })
+
+// function catchError(error) {
+//     if (error.cod)
+// }
 
 function displayWeather(data) {
     return `
@@ -56,15 +61,30 @@ function getMusicData(music){
 }
 
 function displayMusic(music){
+
+
+for (i = 0; i > music.results.trackmatches.length; i++);
+
    return` 
-   <div class="music-container">
+   <div class="music-results">
         <h2>Choose Songs</h2>
-        <div>${music.results.trackmatches.track[0].artist}</div>
-        <div>${music.results.trackmatches.track[0].name}</div>
-    </div>`
+        <img class="thumbnail" src="${music.results.trackmatches.track[0].image[2]["#text"]}">
+        <a class="caption" href="${music.results.trackmatches.track[0].url}">
+        <div class="caption">${music.results.trackmatches.track[0].artist}</div>
+        <div class="caption">${music.results.trackmatches.track[0].name}</div>
+        <img class="thumbnail" src="${music.results.trackmatches.track[1].image[2]["#text"]}">
+        <a class="caption" href="${music.results.trackmatches.track[1].url}">
+        <div class="caption">${music.results.trackmatches.track[1].artist}</div>
+        <div class="caption">${music.results.trackmatches.track[1].name}</div>
+        <img class="thumbnail" src="${music.results.trackmatches.track[2].image[2]["#text"]}">
+        <a class="caption" href="${music.results.trackmatches.track[2].url}">
+        <div class="caption">${music.results.trackmatches.track[2].artist}</div>
+        <div class="caption">${music.results.trackmatches.track[2].name}</div>
+        <div>
+        `
 }
 
-
+// <img src="${music.results.trackmatches.track[0].image[0].size}
 
 // diplay search results from playlist query
 

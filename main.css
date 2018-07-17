@@ -1,22 +1,19 @@
-* {
+* /*{
 	box-sizing: border-box;
 }
 
 body {
   font-family: sans-serif;
-/*  background-image: url('img/music-player.jpg');*/
   background-repeat: no-repeat;
   background-size: cover;
   margin: 0;
 }
 
-.container {
+header.row{
 	max-width: 100%;
 	background-color: black;
   vertical-align: middle;
 	height: 100px;
-  opacity: .8;
-
 }
 
 header h1 {
@@ -25,15 +22,13 @@ header h1 {
   text-align: center;
   margin-top: 0;
   padding: 40px;
-
 }
 
 .main-container {
- 	display: block; 
  	background-color: black;
  	color: white;
- 	margin: 40px auto;
- 	width: 33.3%;
+  margin-left: 33.3%;
+  margin-top: 40px;
  	border-radius: 10px;
  	text-align: center;
   box-shadow: 11px 10px 25px 7px rgba(0,0,0,0.41);
@@ -45,22 +40,21 @@ header h1 {
 }
 
 .weather-container {
-  position: absolute;
   background-color: #66b3ff;
   color: white;
-  width: 333px;
+  width: 33.3%;
   padding: 10px;
   border-radius: 10px;
   box-shadow: 11px 10px 25px 7px rgba(0,0,0,0.41);
   opacity: .8;
-  right: 25px;
-  top: 150px;
+/*  right: 25px;
+  top: 150px;*/
 }
 
-.icon{
+./*icon{
   height: 100px;
   width: 100px;
-  text-align: center;
+  float: right;
 }
 
 .weather-header{
@@ -70,6 +64,7 @@ header h1 {
 .weather-info {
   text-align: left;
 }
+
 fieldset {
 	border: none;
 }
@@ -95,6 +90,27 @@ button#submit{
   height: 40px;
   width: 50px;
   cursor: pointer;
+  background-color: black;
+  color: white;
+  border: none;
+  font-size: 18px;
 }
 
-
+.music-container {
+  display: block; 
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 11px 10px 25px 7px rgba(0,0,0,0.41);
+  opacity: .8;
+*/
+/*  .caption {
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0 10px;
+  font-weight: bold;
+  }
+*/*/
