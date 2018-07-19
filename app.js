@@ -1,4 +1,5 @@
 // get data from weather API from zip code entered
+
 $(".search").submit('',function(event){
     event.preventDefault();
     var zip = $("#zip-search").val();
@@ -52,7 +53,7 @@ function getMusicData(music){
     data : 'method=track.search&' +
            'track=' + music + '&' +
            'api_key=ef758ff691b807ea741f804fc59e8c2e&' +
-           'limit=15&' +
+           'limit=3&' +
            'format=json',
     dataType : 'jsonp',
     success : function(music) {
@@ -66,32 +67,29 @@ function getMusicData(music){
 }
 
 function displayMusic(music){
+var results = ''
 
-// var i;
-
-// for (i = 0; i < music.results.trackmatches.track.length; i++);
-
-   return` 
-   <div class="music-results">
-        <h2>Choose Songs</h2>
-        <img class="thumbnail" src="${music.results.trackmatches.track[0].image[2]["#text"]}">
-        <a class="caption" href="${music.results.trackmatches.track[0].url}">
-        <div class="caption">${music.results.trackmatches.track[0].artist}</div>
-        <div class="caption">${music.results.trackmatches.track[0].name}</div>
-        <div>
-        `
+for (var i = 0; i < music.results.trackmatches.track.length; i++) {
+ results +=` 
+    <div class="music-results">
+        <img class="thumbnail" src="${music.results.trackmatches.track[i].image[2]["#text"]}">
+        <a class="caption" href="${music.results.trackmatches.track[i].url}">
+        <div class="captionc">${music.results.trackmatches.track[i].artist}</div>
+        <div class="caption">${music.results.trackmatches.track[i].name}</div>
+        <div>`
+    };
+    return results     
 }
 
 // adding function to display background image with weather search query
 
 function pictureAPI(data){ 
+
     var API_KEY = '9519885-4ad5c078aa2fe4ee145599bf0';
     var PICTURE_URL = "https://pixabay.com/api/?key="+API_KEY+"&q="+encodeURIComponent(data);
     $.getJSON(PICTURE_URL, function(data){
     if (parseInt(data.totalHits) > 0)
-    $.each(data.hits, function(i, hit){ console.log(data.hits);
-        $('body').css('background-image', 'url(data.hits)');
-     });
+    $('body').css('background-image', `url(${data.hits[Math.floor((Math.random() * 20) + 1)].largeImageURL})`);
     else
     console.log('No hits');
     });

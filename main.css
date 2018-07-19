@@ -1,6 +1,8 @@
 body {
   font-family: sans-serif;
   margin: 0;
+  background-repeat: none;
+  background-size: cover;
 }
 
 
@@ -107,7 +109,4 @@ button#submit{
   opacity: .8;
 }
 
-.caption {
-  text-align: center;
-  padding: 0 10px;
-  }
+
