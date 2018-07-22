@@ -21,23 +21,17 @@ $(".search").submit('',function(event){
                      $('.music-container').css('visibility', 'visible')
 
             });
-   } else{$('.error').html(`<div class="error">*Please enter a valid zip code</div>`)}
+   } else if(zip = undefined){
+    return $('.error').html(`<div class="error">*Please enter a valid zip code</div>`)
+   }else{$('.error').html(`<div class="error">*Please enter a valid zip code</div>`)}
  })
-
-
-function catchError(error) {
-    if (error.cod.message){
-        return $('.error').html(`<div class="error">*Please enter a valid zip code</div>`)
-    }
- }
-
 
 
 function displayWeather(data) {
     return `
     <div class="weather-container">
         <h2>Current Weather for ${data.name}</h2>
-       <p>${data.weather[0].main}<img class = "icon" src='http://openweathermap.org/img/w/${data.weather[0].icon}.png'></p>
+       <p>${data.weather[0].main}<img class = "icon" src='https://openweathermap.org/img/w/${data.weather[0].icon}.png'></p>
         <p>Current Temperature ${data.main.temp} &#176 F</p>
     </div>
     `
@@ -88,7 +82,7 @@ function pictureAPI(data){
     var PICTURE_URL = "https://pixabay.com/api/?key="+API_KEY+"&q="+encodeURIComponent(data);
     $.getJSON(PICTURE_URL, function(data){
     if (parseInt(data.totalHits) > 0)
-    $('body').css('background-image', `url(${data.hits[3].largeImageURL})`);
+    $('body').css('background-image', `url(${data.hits[1].largeImageURL})`);
     else
     console.log('No hits');
     });
