@@ -82,7 +82,7 @@ function pictureAPI(data){
     var PICTURE_URL = "https://pixabay.com/api/?key="+API_KEY+"&q="+encodeURIComponent(data);
     $.getJSON(PICTURE_URL, function(data){
     if (parseInt(data.totalHits) > 0)
-    $('body').css('background-image', `url(${data.hits[1].largeImageURL})`);
+    $('body').css('background-image', `url(${data.hits[Math.floor((Math.random() * 20) + 1)].largeImageURL})`);
     else
     console.log('No hits');
     });
