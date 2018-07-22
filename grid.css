@@ -35,6 +35,7 @@
 
 /* Non-mobile, grid */
 @media only screen and (min-width: 640px) {
+  
   .col-3 {
     width: 25%;
   }

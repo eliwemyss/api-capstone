@@ -17,7 +17,8 @@ $(".search").submit('',function(event){
                     let weatherData = displayWeather(data);
                     $('.results').html(weatherData);
                      getMusicData(data.weather[0].main);
-                     pictureAPI(data.weather[0].main)
+                     pictureAPI(data.weather[0].main);
+                     $('.music-container').css('visibility', 'visible')
 
             });
    } else{$('.error').html(`<div class="error">*Please enter a valid zip code</div>`)}
@@ -36,8 +37,7 @@ function displayWeather(data) {
     return `
     <div class="weather-container">
         <h2>Current Weather for ${data.name}</h2>
-        <img class = "icon" src='http://openweathermap.org/img/w/${data.weather[0].icon}.png'>
-        <p>${data.weather[0].main}</p>
+       <p>${data.weather[0].main}<img class = "icon" src='http://openweathermap.org/img/w/${data.weather[0].icon}.png'></p>
         <p>Current Temperature ${data.main.temp} &#176 F</p>
     </div>
     `
@@ -53,7 +53,7 @@ function getMusicData(music){
     data : 'method=track.search&' +
            'track=' + music + '&' +
            'api_key=ef758ff691b807ea741f804fc59e8c2e&' +
-           'limit=3&' +
+           'limit=9&' +
            'format=json',
     dataType : 'jsonp',
     success : function(music) {
@@ -72,11 +72,10 @@ var results = ''
 for (var i = 0; i < music.results.trackmatches.track.length; i++) {
  results +=` 
     <div class="music-results">
-        <img class="thumbnail" src="${music.results.trackmatches.track[i].image[2]["#text"]}">
-        <a class="caption" href="${music.results.trackmatches.track[i].url}">
-        <div class="captionc">${music.results.trackmatches.track[i].artist}</div>
+        <a href="${music.results.trackmatches.track[i].url}"><img class="thumbnail" src="${music.results.trackmatches.track[i].image[2]["#text"]}">
+        <div class="caption">${music.results.trackmatches.track[i].artist}</div>
         <div class="caption">${music.results.trackmatches.track[i].name}</div>
-        <div>`
+        </div>`
     };
     return results     
 }
@@ -89,7 +88,7 @@ function pictureAPI(data){
     var PICTURE_URL = "https://pixabay.com/api/?key="+API_KEY+"&q="+encodeURIComponent(data);
     $.getJSON(PICTURE_URL, function(data){
     if (parseInt(data.totalHits) > 0)
-    $('body').css('background-image', `url(${data.hits[Math.floor((Math.random() * 20) + 1)].largeImageURL})`);
+    $('body').css('background-image', `url(${data.hits[3].largeImageURL})`);
     else
     console.log('No hits');
     });

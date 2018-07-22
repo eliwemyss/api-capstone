@@ -3,6 +3,8 @@ body {
   margin: 0;
   background-repeat: none;
   background-size: cover;
+  font-size: 1vw;
+  font-size: 
 }
 
 
@@ -14,7 +16,6 @@ header.row{
 
 header h1 {
   color: white;
-  line-height: 1;
   text-align: center;
   padding: 10px;
   font-size: 50px;
@@ -30,7 +31,6 @@ header h1 {
   color: white;
   border-radius: 10px;
   text-align: center;
-  opacity: .8;
 }
 
 fieldset {
@@ -78,8 +78,6 @@ button#submit{
   border-radius: 10px;
   right: 10px;
   top: 150px;
-  opacity: .8;
-  float: left;
 }
 
 .icon{
@@ -98,6 +96,7 @@ button#submit{
 }
 
 .music-container {
+  visibility: hidden;
   display: block; 
   max-width: 50%;
   margin-left: 25%;
@@ -106,7 +105,17 @@ button#submit{
   color: white;
   border-radius: 10px;
   text-align: center;
-  opacity: .8;
 }
+
+.music-results {
+  margin: 15px auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  max-width: 1024px;
+  padding-top: 10px;
+}
+
 
 
