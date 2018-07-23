@@ -20,12 +20,17 @@ $(".search").submit('',function(event){
                      pictureAPI(data.weather[0].main);
                      $('.music-container').css('visibility', 'visible')
 
-            });
-   } else if(zip = undefined){
+            }).fail(catchError)
+   } else if(zip === undefined){
+    console.log(zip)
     return $('.error').html(`<div class="error">*Please enter a valid zip code</div>`)
    }else{$('.error').html(`<div class="error">*Please enter a valid zip code</div>`)}
  })
 
+function catchError(error){
+    console.log('error')
+    return $('.error').html(`<div class="error">*Zip Code not found</div>`)
+}
 
 function displayWeather(data) {
     return `
