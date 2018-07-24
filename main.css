@@ -21,14 +21,17 @@ header h1 {
 
 .main-container {
   background-color: black;
-  position: relative;
-  max-width: 70%;
-  top: 50%;
-  left: 33.3%;
-  margin-top: 50px;
   color: white;
-  border-radius: 10px;
+  position: relative;
   text-align: center;
+  margin-top: 50px;
+  left: 33.3%;
+  width: 70%;
+  max-width: 70%;
+  height: auto;
+  padding: 20px;
+  font-size: 20px;
+  border-radius: 10px;
 }
 
 fieldset {
@@ -44,23 +47,23 @@ legend {
 }
 
 #zip-search {
-  border: 1px solid #9b9b9b;
-  background-color: white;
+  position: relative;
+  border: 01px solid #9b9b9b;
   padding-left: 10px;
-  width: 50%;
-  height: 40px;
+  width: 70%;
+  height: 36px;
   font-size: 18px;
+  vertical-align: bottom;
   margin-bottom: 10px;
 }
 
 button#submit{
-  height: 40px;
-  width: 50px;
+  padding: 0;
+  height: 36px;
+  width: 60px;
+  font-weight: 700;
+  margin-bottom: 10px;
   cursor: pointer;
-  background-color: black;
-  color: white;
-  border: none;
-  font-size: 18px;
 }
 
 .error{
@@ -68,14 +71,15 @@ button#submit{
 }
 
 .weather-container {
-  position: absolute;
   background-color: #66b3ff;
+  position: absolute;
   color: white;
-  max-width: 25%;
+  max-width: 33.3%;
   padding: 10px;
   border-radius: 10px;
-  right: 10px;
-  top: 150px;
+  margin-top: 50px;
+  left: 10px;
+  float: left;
 }
 
 .icon{
@@ -96,9 +100,9 @@ button#submit{
 .music-container {
   visibility: hidden;
   display: block; 
-  max-width: 50%;
+  max-width: 70%;
   margin-left: 25%;
-  margin-top: 120px;
+  margin-top: 250px;
   margin-bottom: 10px;
   background-color: black;
   color: white;
@@ -117,7 +121,7 @@ button#submit{
 }
 
 .caption{
-  overflow: hidden;
+  overflow: auto;
 }
 
 
