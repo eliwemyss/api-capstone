@@ -3,14 +3,14 @@ body {
   margin: 0;
   background-repeat: none;
   background-size: cover;
-  font-size: 1vw;
+  font-size: .9vw;
 }
 
 
 header.row{
   max-width: 100%;
   background-color: black;
-  height: 100px;
+  height: 150px;
 }
 
 header h1 {
@@ -100,9 +100,9 @@ button#submit{
 .music-container {
   visibility: hidden;
   display: block; 
-  max-width: 70%;
+  max-width: 80%;
   margin-left: 25%;
-  margin-top: 250px;
+  margin-top: 100px;
   margin-bottom: 10px;
   background-color: black;
   color: white;
@@ -118,10 +118,6 @@ button#submit{
   justify-content: space-evenly;
   max-width: 1024px;
   padding-top: 10px;
-}
-
-.caption{
-  overflow: auto;
 }
 
 
