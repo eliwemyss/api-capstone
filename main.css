@@ -1,26 +1,33 @@
 body {
   font-family: sans-serif;
   margin: 0;
+  height: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
   background-repeat: none;
   background-size: cover;
-  font-size: .9vw;
 }
 
 
 header.row{
   max-width: 100%;
-  background-color: black;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  background-color: #232323;
   height: 150px;
 }
 
 header h1 {
   color: white;
   text-align: center;
+  vertical-align: middle;
   font-size: 50px;
 }
 
 .main-container {
-  background-color: black;
+  background-color: #716f70;
   color: white;
   position: relative;
   text-align: center;
@@ -32,6 +39,7 @@ header h1 {
   padding: 20px;
   font-size: 20px;
   border-radius: 10px;
+  opacity: .75;
 }
 
 fieldset {
@@ -61,37 +69,38 @@ button#submit{
   padding: 0;
   height: 36px;
   width: 60px;
-  font-weight: 700;
+  font-size: 20px;
+  background-color: #716f70;
+  color: white;
   margin-bottom: 10px;
+  border: none;
   cursor: pointer;
 }
 
 .error{
   color: red;
+  text-align: left;
+  padding-left: 15px;
 }
 
 .weather-container {
   background-color: #66b3ff;
-  position: absolute;
+  margin-top: -186px;
   color: white;
-  max-width: 33.3%;
   padding: 10px;
   border-radius: 10px;
-  margin-top: 50px;
-  left: 10px;
-  float: left;
 }
 
-.icon{
-  height: 100px;
-  width: 100px;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.weather-container.h2{
+h2{
   text-align: center;
 }
+
+
+.icon{
+  height: 80px;
+  width: 80px;
+}
+
 
 .weather-container.p {
   text-align: left;
@@ -102,23 +111,55 @@ button#submit{
   display: block; 
   max-width: 80%;
   margin-left: 25%;
-  margin-top: 100px;
-  margin-bottom: 10px;
-  background-color: black;
+  margin-bottom: 20px;
+  background-color: #716f70;
   color: white;
   border-radius: 10px;
   text-align: center;
+  position: relative;
 }
 
 .music-results {
   margin: 15px auto;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-evenly;
   max-width: 1024px;
   padding-top: 10px;
 }
 
+.caption {
+  text-align: center;
+}
 
+footer.row {
+  max-width: 100%;
+  height: auto;
+}
+
+#footer {
+  background-color: #232323;
+  height: 100px;
+  position: relative;
+  text-align: center;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+}
+.pixabay {
+  height: 100px;
+  width: 100px;
+}
+@media only screen and (max-width: 640px) {
+  .weather-container {
+    margin: 25px auto;
+  }
+
+  .main-container {
+    margin-left: -70px;
+  }
+
+  .music-container {
+    margin: auto;
+}
 

@@ -36,7 +36,8 @@ function displayWeather(data) {
     return `
     <div class="weather-container">
         <h2>Current Weather for ${data.name}</h2>
-       <p>${data.weather[0].main}<img class = "icon" src='https://openweathermap.org/img/w/${data.weather[0].icon}.png'></p>
+        <img class = "icon" src='https://openweathermap.org/img/w/${data.weather[0].icon}.png'>
+        <p>${data.weather[0].main}</p>
         <p>Current Temperature ${data.main.temp} &#176 F</p>
     </div>
     `
@@ -52,7 +53,7 @@ function getMusicData(music){
     data : 'method=track.search&' +
            'track=' + music + '&' +
            'api_key=ef758ff691b807ea741f804fc59e8c2e&' +
-           'limit=15&' +
+           'limit=16&' +
            'format=json',
     dataType : 'jsonp',
     success : function(music) {
@@ -68,13 +69,15 @@ function getMusicData(music){
 function displayMusic(music){
 var results = ''
 
-for (var i = 0; i < music.results.trackmatches.track.length; i++) {
+for (var i = 1; i < music.results.trackmatches.track.length; i++) {
  results +=` 
     <div class="music-results">
-        <a href="${music.results.trackmatches.track[i].url}"><img class="thumbnail" src="${music.results.trackmatches.track[i].image[2]["#text"]}">
-        <div class="caption">${music.results.trackmatches.track[i].artist}</div>
-        <div class="caption">${music.results.trackmatches.track[i].name}</div>
-        </div>`
+        <a href="${music.results.trackmatches.track[i].url}"target="_blank"><img class="thumbnail" src="${music.results.trackmatches.track[i].image[2]["#text"]}">
+        <div class='caption'>
+        <p>${music.results.trackmatches.track[i].artist}</p>
+        <p>${music.results.trackmatches.track[i].name}</p>
+        </div>
+    </div>`
     };
     return results     
 }
@@ -92,7 +95,6 @@ function pictureAPI(data){
     console.log('No hits');
     });
 }
-
 
 
 
