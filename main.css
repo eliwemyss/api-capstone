@@ -110,7 +110,7 @@ h2{
   display: block; 
   max-width: 80%;
   margin-left: 25%;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
   background-color: #716f70;
   color: white;
   border-radius: 10px;
@@ -121,13 +121,17 @@ h2{
 .music-results {
   margin: 15px auto;
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
-  max-width: 1024px;
   padding-top: 10px;
 }
 
 .caption {
   text-align: center;
+  font-size: .9em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 footer.row {
