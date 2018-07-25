@@ -138,7 +138,7 @@ footer.row {
 #footer {
   background-color: #232323;
   height: 100px;
-  position: relative;
+  position: fixed;
   text-align: center;
   right: 0;
   bottom: 0;
