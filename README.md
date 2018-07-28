@@ -14,7 +14,7 @@ This app allows users to enter a 5 digit zip code and get back weather data. Thi
 
 # Technology Used
 
-HTML
-CSS
-JavaScript
-Jquery
+* HTML
+* CSS
+* JavaScript
+* Jquery
