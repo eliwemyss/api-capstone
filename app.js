@@ -34,9 +34,9 @@ function catchError(error){
 
 function displayWeather(data) {
     return `
-    <div class="weather-container">
+    <div class="weather-container" aria-live="polite">
         <h2>Current Weather for ${data.name}</h2>
-        <img class = "icon" src='https://openweathermap.org/img/w/${data.weather[0].icon}.png'>
+        <img class = "icon" src='https://openweathermap.org/img/w/${data.weather[0].icon}.png' alt="weather icon">
         <p>${data.weather[0].main}</p>
         <p>Current Temperature ${data.main.temp} &#176 F</p>
     </div>
@@ -74,8 +74,8 @@ for (var i = 1; i < music.results.trackmatches.track.length; i++) {
  results +=` 
     <div class="music-results col-4">
         <div class="col-4">
-        <a href="${music.results.trackmatches.track[i].url}"target="_blank"><img class="thumbnail" src="${music.results.trackmatches.track[i].image[2]["#text"]}">
-        <div class="caption">
+        <a href="${music.results.trackmatches.track[i].url}"target="_blank"><img class="thumbnail" src="${music.results.trackmatches.track[i].image[2]["#text"]}" alt="album cover">
+        <div class="caption" aria-live="polite">
          <p>${music.results.trackmatches.track[i].artist}</p>
         <p>${music.results.trackmatches.track[i].name}</p>
         </a>
