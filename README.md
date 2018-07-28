@@ -12,7 +12,7 @@ This app allows users to enter a 5 digit zip code and get back weather data. Thi
 
 
 
-#Technology Used
+# Technology Used
 
 HTML
 CSS
