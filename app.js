@@ -96,10 +96,9 @@ function pictureAPI(data){
     var PICTURE_URL = "https://pixabay.com/api/?key="+API_KEY+"&q="+encodeURIComponent(data);
     $.getJSON(PICTURE_URL, function(data){
     if (parseInt(data.totalHits) > 0)
-    $('body').css('background-image', `url(${data.hits[Math.floor((Math.random() * 20) + 1)].largeImageURL})`);
+    $('html').css('background-image', `url(${data.hits[Math.floor((Math.random() * 20) + 1)].largeImageURL})`, 'background-repeat:', 'no-repeat', 'background-size:', '100%');
     else
     console.log('No hits');
     });
 }
-
 
