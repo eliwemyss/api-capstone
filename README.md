@@ -19,3 +19,9 @@ This app allows users to enter a 5 digit zip code and get back weather data. Thi
 * CSS
 * JavaScript
 * Jquery
+
+# APIs Used
+
+- Open Weather Map
+- last.fm
+- PixaBay
