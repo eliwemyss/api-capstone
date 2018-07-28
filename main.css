@@ -1,7 +1,10 @@
-/*html {
+html {
   height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%
 }
-*/
+
 body {
   font-family: sans-serif;
   margin: 0;
@@ -9,8 +12,6 @@ body {
   width: 100vw;
   display: flex;
   flex-direction: column;
-  background-repeat: none;
-  background-size: cover;
 }
 
 
@@ -131,9 +132,8 @@ h2{
 }
 
 .caption {
+  display: flex;
   text-align: center;
-  overflow: hidden;
-  text-overflow: ellipsis;
   white-space: nowrap;
 }
 

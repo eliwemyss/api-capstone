@@ -69,9 +69,10 @@ function getMusicData(music){
 function displayMusic(music){
 var results = ''
 
+
 for (var i = 1; i < music.results.trackmatches.track.length; i++) {
  results +=` 
-    <div class="music-results">
+    <div class="music-results col-4">
         <div class="col-4">
         <a href="${music.results.trackmatches.track[i].url}"target="_blank"><img class="thumbnail" src="${music.results.trackmatches.track[i].image[2]["#text"]}">
         <div class="caption">
@@ -81,9 +82,10 @@ for (var i = 1; i < music.results.trackmatches.track.length; i++) {
         </div>
         </div>
     </div>`
+    $('#footer').css('position', 'relative')
     };
-    return results;
-    $('#footer').css('position', 'relative')    
+
+    return results    
 }
 
 // adding function to display background image with weather search query
