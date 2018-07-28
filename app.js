@@ -76,7 +76,7 @@ for (var i = 1; i < music.results.trackmatches.track.length; i++) {
         <div class="col-4">
         <a href="${music.results.trackmatches.track[i].url}"target="_blank"><img class="thumbnail" src="${music.results.trackmatches.track[i].image[2]["#text"]}">
         <div class="caption">
-        <p>${music.results.trackmatches.track[i].artist}</p>
+         <p>${music.results.trackmatches.track[i].artist}</p>
         <p>${music.results.trackmatches.track[i].name}</p>
         </a>
         </div>
@@ -101,6 +101,5 @@ function pictureAPI(data){
     console.log('No hits');
     });
 }
-
 
 
