@@ -1,6 +1,6 @@
 html {
-  height: 100vh;
   height: 100%;
+  width: 100vw;
 }
 
 body {
@@ -8,6 +8,8 @@ body {
   margin: 0;
   height: 100vh;
   width: 100vw;
+  background: no-repeat center center fixed;
+  background-size: cover;
   display: flex;
   flex-direction: column;
 }
@@ -200,6 +202,6 @@ footer.row {
   }
 
   .music-container {
-    margin: auto auto;
+    margin: auto auto 20px auto;
 }
 
