@@ -53,7 +53,7 @@ function getMusicData(music){
     data : 'method=track.search&' +
            'track=' + music + '&' +
            'api_key=ef758ff691b807ea741f804fc59e8c2e&' +
-           'limit=16&' +
+           'limit=40&' +
            'format=json',
     dataType : 'jsonp',
     success : function(music) {
