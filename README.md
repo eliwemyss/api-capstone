@@ -9,7 +9,7 @@ This app allows users to enter a 5 digit zip code and get back current weather d
 
 ![](screenshots/screenshot1.png)
 
-![](screenshots/screenshot2.png)
+![](screenshots/screenshot%203.png)
 
 
 
