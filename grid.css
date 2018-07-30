@@ -48,6 +48,7 @@
   /* 6 columns 6/12 in % */
   .col-6 {
     width: 50%;
+    flex: 1;
   }
 
   /* 12 columns, 12/12 */

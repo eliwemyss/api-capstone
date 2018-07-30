@@ -62,7 +62,7 @@ legend {
   position: relative;
   border: 01px solid #9b9b9b;
   padding-left: 10px;
-  width: 70%;
+  width: 80%;
   height: 36px;
   font-size: 18px;
   vertical-align: bottom;
@@ -98,7 +98,6 @@ button#submit{
 h2{
   text-align: center;
   margin-bottom: 10px;
-  color: white;
 }
 
 
@@ -118,13 +117,14 @@ h2{
   display: block; 
   margin-left: 25%;
   margin-bottom: 50px;
-  background-color: #716f70;
-  color: white;
+  background-color: rgb(255, 255, 255, 0.7);
   border-radius: 10px;
   text-align: center;
   position: relative;
   max-width: 90%;
+  
 }
+
 
 .music-results {
   display: flex;
@@ -136,9 +136,9 @@ h2{
 }
 
 .caption {
+  width: 174px;
   text-align: center;
-  font-size: .75em;
-  white-space: nowrap;
+
 }
 
 footer.row {
@@ -210,12 +210,34 @@ footer.row {
     margin-left: auto;
     margin-right: auto;
   }
+
+  .caption {
+    width: auto;
+  }
 }
 
 @media only screen and (width: 768px) {
+  
+  .weather-container {
+    margin-top: -265px;
+    margin-left: 5px;
+    margin-bottom: 20px;
+  }
   .music-container {
     width: 90% !important;
     margin-left: auto;
     margin-right: auto;
   }
 }
+
+@media only screen and (width: 1024px) {
+  .weather-container {
+    margin-bottom: 25px;
+  }
+  .music-container {
+    width: 90% !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
