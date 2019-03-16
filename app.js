@@ -15,7 +15,9 @@ $(".search").submit('',function(event){
             function renderResults(data){  
                     console.log(data);
                     let weatherData = displayWeather(data);
-                    $('.results').html(weatherData);
+
+                    $('.weather-container').html(weatherData);
+                    $('.weather-container').css('visibility', 'visible');
                      getMusicData(data.weather[0].main);
                      pictureAPI(data.weather[0].main);
                      $('.music-container').css('visibility', 'visible')
@@ -34,12 +36,10 @@ function catchError(error){
 
 function displayWeather(data) {
     return `
-    <div class="weather-container" aria-live="polite">
         <h2>Current Weather for ${data.name}</h2>
         <img class = "icon" src='https://openweathermap.org/img/w/${data.weather[0].icon}.png' alt="weather icon">
         <p>${data.weather[0].main}</p>
         <p>Current Temperature ${data.main.temp} &#176 F</p>
-    </div>
     `
 }
 
@@ -59,7 +59,7 @@ function getMusicData(music){
     success : function(music) {
         console.log(music)
         let musicData = displayMusic(music)
-        $('.music-results').html(musicData)
+        $('.music-container').html(musicData)
 
         }
     });
@@ -73,13 +73,11 @@ var results = ''
 for (var i = 1; i < music.results.trackmatches.track.length; i++) {
  results +=` 
     <div class="music-results col-4">
-        <div class="col-4">
         <a href="${music.results.trackmatches.track[i].url}"target="_blank"><img class="thumbnail" src="${music.results.trackmatches.track[i].image[2]["#text"]}" alt="album cover">
         <div class="caption" aria-live="polite">
          <p>${music.results.trackmatches.track[i].artist}</p>
         <p>${music.results.trackmatches.track[i].name}</p>
         </a>
-        </div>
         </div>
     </div>`
     $('#footer').css('position', 'relative');

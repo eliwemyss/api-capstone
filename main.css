@@ -37,8 +37,8 @@ header h1 {
   position: relative;
   text-align: center;
   margin-top: 50px;
-  left: 33.3%;
-  width: 70%;
+  margin-left: 33.3%;
+  width: 33.3%;
   max-width: 70%;
   height: auto;
   padding: 20px;
@@ -88,11 +88,14 @@ button#submit{
 }
 
 .weather-container {
+  visibility: hidden;
   background-color: #66b3ff;
-  margin-top: -186px;
   color: white;
   padding: 10px;
   border-radius: 10px;
+  margin: 5% 40% 5%;
+  width: 20%;
+  text-align: center;
 }
 
 h2{
@@ -114,31 +117,27 @@ h2{
 
 .music-container {
   visibility: hidden;
-  display: block; 
-  margin-left: 25%;
+/*  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+*/  margin-left: 25%;
   margin-bottom: 50px;
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 10px;
   text-align: center;
   position: relative;
   max-width: 90%;
+  width: 50%;
   
 }
 
 
 .music-results {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding: 10px;
-  margin-left: 0px;
-  margin-right: -20px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .caption {
-  width: 174px;
-  text-align: center;
-
+display: none;
 }
 
 footer.row {
@@ -196,6 +195,7 @@ footer.row {
   }
   .weather-container {
     margin: 25px auto;
+    width: 90%;
   }
 
   .main-container {
