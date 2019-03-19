@@ -4,7 +4,7 @@ html {
 }
 
 body {
-  font-family: sans-serif;
+  font-family: 'Montserrat', sans-serif;
   margin: 0;
   height: 100vh;
   width: 100vw;
@@ -15,35 +15,33 @@ body {
 }
 
 
-header.row{
+header{
   max-width: 100%;
   left: 0px;
   top: 0px;
   right: 0px;
-  background-color: #232323;
-  height: 150px;
+  background-color: #3B1C32;
 }
 
 header h1 {
   color: white;
   text-align: center;
   vertical-align: middle;
-  font-size: 50px;
 }
 
 .main-container {
-  background-color: #716f70;
+  background-color: #A4D4B4;
   color: white;
   position: relative;
   text-align: center;
   margin-top: 50px;
   margin-left: 33.3%;
   width: 33.3%;
-  max-width: 70%;
+  max-width: 90%;
   height: auto;
   padding: 20px;
   font-size: 20px;
-  border-radius: 10px;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
 }
 
 fieldset {
@@ -89,13 +87,13 @@ button#submit{
 
 .weather-container {
   visibility: hidden;
-  background-color: #66b3ff;
+  background-color: #B96D40;
   color: white;
   padding: 10px;
-  border-radius: 10px;
   margin: 5% 40% 5%;
   width: 20%;
   text-align: center;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
 }
 
 h2{
@@ -117,29 +115,43 @@ h2{
 
 .music-container {
   visibility: hidden;
-/*  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-*/  margin-left: 25%;
+  margin-left: 25%;
   margin-bottom: 50px;
-  background-color: rgba(255, 255, 255, 0.7);
-  border-radius: 10px;
-  text-align: center;
-  position: relative;
+  background-color: rgba(255, 255, 255, 0.6);
+  text-align: center
   max-width: 90%;
   width: 50%;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2)
   
 }
 
 
-.music-results {
-  margin-left: auto;
-  margin-right: auto;
+.music-card {
+ /* border-radius: 25px;*/
+/*  background: rgba(255, 207, 156, .4);*/
+/*  height: 300px;
+  margin: 20px;*/
+  align-items: center;
+  /*box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);*/
 }
 
+.thumbnail {
+  border-radius: 100%;
+  padding: 10px;
+}
 .caption {
-display: none;
+  padding: 10px;
+/*  color: #262828;
+  line-height: 21px;*/
+}
+.caption a{
+  text-decoration: none;
+  color: black;
 }
 
+.caption a:hover {
+  color: orange;
+}
 footer.row {
   max-width: 100%;
   height: auto;
@@ -199,7 +211,7 @@ footer.row {
   }
 
   .main-container {
-    margin-left: -70px;
+    margin: auto;
   }
 
   .music-container {

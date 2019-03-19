@@ -59,7 +59,7 @@ function getMusicData(music){
     success : function(music) {
         console.log(music)
         let musicData = displayMusic(music)
-        $('.music-container').html(musicData)
+        $('.music-results').html(musicData)
 
         }
     });
@@ -72,7 +72,7 @@ var results = ''
 
 for (var i = 1; i < music.results.trackmatches.track.length; i++) {
  results +=` 
-    <div class="music-results col-4">
+    <div class="music-card col-4">
         <a href="${music.results.trackmatches.track[i].url}"target="_blank"><img class="thumbnail" src="${music.results.trackmatches.track[i].image[2]["#text"]}" alt="album cover">
         <div class="caption" aria-live="polite">
          <p>${music.results.trackmatches.track[i].artist}</p>
@@ -94,7 +94,7 @@ function pictureAPI(data){
     var PICTURE_URL = "https://pixabay.com/api/?key="+API_KEY+"&q="+encodeURIComponent(data);
     $.getJSON(PICTURE_URL, function(data){
     if (parseInt(data.totalHits) > 0)
-    $('body').css('background-image', `url(${data.hits[Math.floor((Math.random() * 20) + 1)].largeImageURL})`);
+    $('body').css('background-image', `url(${data.hits[Math.floor((Math.random() * 10) + 2)].largeImageURL})`);
     else
     console.log('No hits');
     });
